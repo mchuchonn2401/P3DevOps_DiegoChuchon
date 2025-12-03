@@ -1,0 +1,375 @@
+/* ---- VARIABLES DE COLOR ---- */
+:root {
+    --color-texto: #2c3e50;
+    --color-resalte: #3498db;
+    --color-secundario: #e74c3c;
+    --color-fondo: #ecf0f1;
+}
+
+
+/* ---- ESTILOS GENERALES ---- */
+/* Reset de estilos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    line-height: 1.6;
+    padding: 20px;
+}
+
+/* Contenedor principal centrado */
+/* Ancho máximo a 1200px para pantallas grandes */
+.contenedor-principal {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Títulos */
+h1 {
+    color: var(--color-texto);
+    margin-bottom: 30px;
+    font-size: 2.5em;
+}
+
+/* Subtítulos */
+h2 {
+    color: var(--color-resalte);
+    margin-bottom: 20px;
+    font-size: 1.8em;
+}
+
+
+/* ---- LOGIN ---- */
+/* Formulario de login */
+.form-login {
+    max-width: 450px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Texto y espacio para input del formulario*/
+.campo-formulario {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.campo-formulario label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    font-size: 20px;
+    color: var(--color-texto);
+}
+
+/* Input con icono - relative para posicionar el icono a la izquierda */
+.campo-icono {
+    position: relative;
+}
+
+/* Inputs con padding a la izquierda para dejar espacio al icono */
+.campo-icono input {
+    width: 100%;
+    padding: 12px 12px 12px 50px;
+    border: 2px solid var(--color-fondo);
+    border-radius: 8px;
+    font-size: 20px;
+    transition: border-color 0.3s;
+}
+
+/* Focus es el estado cuando el usuario hace clic en el input - resalta la sección */
+.campo-icono input:focus {
+    outline: none;
+    border-color: var(--color-resalte);
+}
+
+/* Icono dentro del input */
+.icono-input {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 32px;
+    height: 32px;
+    background-color: var(--color-resalte);
+    border-radius: 4px;
+    padding: 2px;
+}
+
+
+/* ---- BOTONES GLOBALES ---- */
+.boton {
+    background-color: var(--color-resalte);
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+/* Efecto hover con animación de profundidad para todos los botones */
+.boton:hover {
+    background-color: #2980b9;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Como el boton de vaciar cesta */
+.boton-secundario {
+    background-color: var(--color-secundario);
+}
+
+/* Hereda el hover global pero con color diferente */
+.boton-secundario:hover {
+    background-color: #c0392b;
+}
+
+/* El boton de Añadir de la tabla de productos */
+.boton-pequeno {
+    padding: 8px 16px;
+    font-size: 14px;
+}
+
+/* Layout de productos - Grid de dos columnas */
+/* Grid-template-columns - Productos ocupa el doble de espacio que Mi cesta */
+.contenedor-productos {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+
+/* ---- SECCION PRODUCTOS ---- */
+/* Secciones con tarjetas - Productos disponibles y Mi cesta*/
+.seccion-tarjeta {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Encabezado con titulo de seccion e icono */
+.encabezado-seccion {
+    display: flex;
+    align-items: left;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 12px;
+
+}
+
+/* Estilo del icono de la seccion */
+.icono-seccion {
+    width: 48px;
+    height: 48px;
+    background-color: var(--color-resalte);
+    border-radius: 8px;
+    padding: 8px;
+}
+
+
+/* --- TABLAS --- */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+/* Encabezado de tabla */
+th {
+    background-color: var(--color-resalte);
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-weight: 600;
+}
+
+/* Filas de tabla */
+td {
+    padding: 12px 12px;
+    border-bottom: 1px solid var(--color-fondo);
+}
+
+/* Quitar borde inferior de la última fila */
+tr:last-child td {
+    border-bottom: none;
+}
+
+/* Resaltar fila al pasar el ratón */
+tr:hover {
+    background-color: var(--color-fondo);
+}
+
+/* --- MENSAJES DE SISTEMA --- */
+.mensaje {
+    margin: 20px auto;
+    padding: 15px;
+    border-radius: 8px;
+    max-width: 500px;
+}
+
+/* Mensaje de error - Texto, fondo y borde */
+.mensaje-error {
+    background-color: #fadbd8;
+    color: var(--color-secundario);
+    font-size: 20px;
+    border: 1px solid var(--color-secundario);
+}
+
+/* Mensaje de éxito - Texto, fondo y borde */
+.mensaje-exito {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #28a745;
+}
+
+/* ---- CESTA DE COMPRA ---- */
+.resumen-cesta {
+    text-align: left;
+}
+
+/* Lista de productos en la cesta - sin estilo para quitar bullets*/
+.resumen-cesta ul {
+    list-style: none;
+    margin: 15px 0;
+}
+
+/* Elementos de la lista */
+.resumen-cesta li {
+    padding: 10px;
+    background: var(--color-fondo);
+    margin-bottom: 8px;
+    border-radius: 6px;
+}
+
+/* Texto del total de la cesta */
+.total-cesta {
+    text-align: right;
+    font-size: 1.3em;
+    color: var(--color-resalte);
+    margin: 20px 0;
+}
+
+/* Seccion de acciones de la cesta - Botones de pagar y vaciar */
+.acciones-cesta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+/* Boton principal de pago */
+.boton-pago {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* Icono en el botón de pagar */
+.icono-boton {
+    width: 32px;
+    height: 32px;
+    border-radius: 4px;
+    padding: 3px;
+}
+
+/* Pie de página */
+.pie-pagina {
+    margin-top: 40px;
+    padding: 20px;
+    text-align: center;
+}
+
+/* --- LOGOFF ---- */
+/* Aplica al boton de logoff de las paginas productos y cesta */
+.boton-logoff {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background-color: var(--color-secundario);
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 24px;
+    font-weight: 600;
+    transition: all 0.3s;
+    text-decoration: none;
+}
+
+.boton-logoff:hover {
+    background-color: #c0392b;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.icono-logoff {
+    width: 32px;
+    height: 32px;
+    border-radius: 4px;
+    padding: 3px;
+}
+
+/* ---- PAGINA PAGAR ---- */
+.contenedor-confirmacion {
+    max-width: 600px;
+    margin: 50px auto;
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.contenedor-confirmacion p {
+    margin: 15px 0;
+    font-size: 20px;
+}
+
+/* Enlace para volver a la página de productos */
+.enlace-volver {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 24px;
+    background-color: var(--color-resalte);
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.enlace-volver:hover {
+    background-color: #2980b9;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* --- MEDIA QUERIES ----*/
+/* Basicamente para que la pagina de productos en vez de mostrarse en 2 columnas se muestre en 1 */
+/* Usualmente no se usan tablas en pantallas pequeñas, se usan tarjetas o listas */
+/* Podria reducir aun mas la fuente o los paddings, pero sacrifico la legibilidad. Lo dejo anotado */
+@media (max-width: 768px) {
+    .contenedor-productos {
+        grid-template-columns: 1fr;
+    }
+}
